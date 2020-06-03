@@ -20,10 +20,12 @@ class Webcontroller extends Controller
         ]);
     }
 
-    public function findBook($title)
+    public function findBook(Request $request)
     {
-        $book = Book::findOrFail($title);
-        return view("book.find", ["book" => $book]);
+        $book = Book::where("title", $request->bookname)->get();
+        return view("book.find", [
+            "book"=>$book,
+        ]);
     }
 
 }

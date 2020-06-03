@@ -3,16 +3,15 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">book listing</h3>
-
-            <div class="card-tools">
-                <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                    </div>
+            <form  role="form" action="{{url("/find-book")}}" method="POST"  >
+                @method("POST")
+                @csrf
+                <div class="form-group" style="width: 30%">
+                    <label for="book">Email address</label>
+                    <input type="text" name="bookname" class="form-control" id="book" placeholder="Search....">
+                    <button class="btn btn-dark">Search</button>
                 </div>
-            </div>
+            </form>
         </div>
         <div class="card-header">
             <a href="{{url("new-book")}}" class="float-right btn btn-outline-primary">+</a>

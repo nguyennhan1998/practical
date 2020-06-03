@@ -16,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get("/list-book","WebController@listBook");
-Route::get("/find-book/{id}","WebController@findBook");
+Route::get("/find-book","WebController@findBook");
 

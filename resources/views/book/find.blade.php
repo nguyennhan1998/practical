@@ -2,7 +2,7 @@
 @section("content")
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">category listing</h3>
+            <h3 class="card-title">book listing</h3>
 
             <div class="card-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -14,29 +14,28 @@
                 </div>
             </div>
         </div>
-        <div class="card-header">
-            <a href="{{url("new-category")}}" class="float-right btn btn-outline-primary">+</a>
-        </div>
         <!-- /.card-header -->
         <div class="card-body table-responsive p-0">
             <table class="table table-hover text-nowrap">
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Category Name</th>
-                    <th>Created at</th>
-                    <th>Updated at</th>
+                    <th>author id</th>
+                    <th>title</th>
+                    <th>ISBN</th>
+                    <th>pub year</th>
+                    <th>available</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($categories as $category)
                     <tr>
-                        <td>{{$category->__get("id")}}</td>
-                        <td>{{$category->__get("category_name")}}</td>
-                        <td>{{$category->__get("created_at")}}</td>
-                        <td>{{$category->__get("updated_at")}}</td>
+                        <td>{{$book->__get("id")}}</td>
+                        <td>{{$book->__get("author_id")}}</td>
+                        <td>{{$book->__get("title")}}</td>
+                        <td>{{$book->__get("ISBN")}}</td>
+                        <td>{{$book->__get("pub_year")}}</td>
+                        <td>{{$book->__get("available")}}</td>
                     </tr>
-                @endforeach
                 </tbody>
             </table>
         </div>

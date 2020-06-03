@@ -13,12 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/","WebController@index");
-Route::get("/demo-routing","WebController@demoRouting");
-Route::get("/login","WebController@login");
-Route::get("/list-category","WebController@listCategory");
-Route::get("/list-category","WebController@listCategory");
-Route::get("/new-category","WebController@newCategory");
-Route::post("/save-category","WebController@saveCategory");
 
+
+Route::get("/list-book","WebController@listBook");
+Route::get("/find-book/{id}","WebController@findBook");
 

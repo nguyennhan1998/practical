@@ -20,9 +20,9 @@ class Webcontroller extends Controller
         ]);
     }
 
-    public function findBook($id)
+    public function findBook($title)
     {
-        $book = Book::findOrFail($id);
+        $book = Book::findOrFail($title);
         return view("book.find", ["book" => $book]);
     }
 

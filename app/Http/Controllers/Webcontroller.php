@@ -7,10 +7,14 @@ use App\Category;
 use App\Author;
 use App\Feedback;
 use App\User;
+use http\Message;
 use Illuminate\Http\Request;
 
 class Webcontroller extends Controller
 {
+    public function Home(){
+        return view("home");
+    }
     public function listBook()
     {
         $books = Book::all();
@@ -46,12 +50,13 @@ class Webcontroller extends Controller
                 "feedback"=>$request->get("feedback"),
             ]);
 
+
 //            $data["message"] = "thank for your feedback";
 //            notify("global","new_category",$data);
         }catch (\Exception $exception){
             return redirect()->back();
         }
-        return redirect()->to("/");
+        return redirect()->to("/home");
     }
 
 }

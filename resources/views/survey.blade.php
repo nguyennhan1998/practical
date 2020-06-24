@@ -43,19 +43,14 @@
             <span class="error invalid-feedback">{{$message}}</span>
             @enderror
         </div>
-        <button type="submit"  class="btn btn-primary">Submit</button>
+        <button onclick="feedback()" type="submit"  class="btn btn-primary">Submit</button>
+        <script type="text/javascript">
+
+            alert("thank for your feedback!");
+        </script>
+
     </form>
 </div>
-<script type="text/javascript">
-    function feedback() {
-        $.ajax({
-            url:"{{url("/save-feedback")}}",
-            success: function () {
-                alert("thank for your feedback!");
-            }
-        });
-    }
-</script>
 </body>
 
 </html>

@@ -50,13 +50,10 @@ class Webcontroller extends Controller
                 "feedback"=>$request->get("feedback"),
             ]);
 
-
-//            $data["message"] = "thank for your feedback";
-//            notify("global","new_category",$data);
         }catch (\Exception $exception){
             return redirect()->back();
         }
-        return redirect()->to("/home");
+        return redirect()->to("/survey");
     }
 
 }
